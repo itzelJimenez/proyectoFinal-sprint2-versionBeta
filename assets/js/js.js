@@ -2,13 +2,15 @@ var listas = [];
 var nombreNuevaLista = document.getElementById('nombreNuevaLista');
 var contenedorLista = document.getElementById('nuevasListas');
 
-function Lista (nombre){
+function Lista (id,nombre){
+	this.id=id
 	this.nombreLista = nombre
 	this.elementos = []
 }
 
 function crearLista(lista){
- 	var lista = new Lista (nombreNuevaLista.value);
+	var id= Date.now();
+ 	var lista = new Lista (id,nombreNuevaLista.value);
  	listas.push(lista);
  	mostrarLista(lista);
 }
